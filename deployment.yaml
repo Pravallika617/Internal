@@ -3,17 +3,17 @@ kind: Deployment
 metadata:
   name: registration-deployment
 spec:
-  replicas: 4
+  replicas: 1
   selector:
     matchLabels:
-      app: app.py
+      app: registration
   template:
     metadata:
       labels:
-        app: app.py
+        app: registration
     spec:
       containers:
-        - name: app.py
-          image:
+        - name: registration-app        
+          image: registration:v1       
           ports:
             - containerPort: 5000
